@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --darkest: #121823;
+    --dark: #123a4c;
+    --regular: #146880;
+    --light: #1da5be;
+    --lighest: #20dbd8;
+}
+
+body {
+    font-family: Montserrat;
+    background-color: var(--dark);
+    color: var(--light);
+}
+h1 {
+    font-family: Prompt;
+    font-weight: 600;
+    font-size: 3em;
+    color: var(--light);
+}
+h2 {
+    font-family: Poppins;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--lighest);
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: solid 1px var(--lighest)
+}
+a {
+    color: var(--light);
+    transition: all 0.5s;
+}
+a:hover {
+    color: var(--lighest);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+form label {
+    font-family: Poppins;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1em;
+}
+form input, form select {
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: inset 0 0 5px rgb(0, 0, 0, 0.5);
+    margin: 5px 0 10px;
+}
+button {
+    border: solid 4px var(--light);
+    border-radius: 99999px;
+    padding: 5px 10px;
+    color: var(--light);
+    transition: all 0.5s;
+    display: inline-block;
+    font-family: Poppins;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 20px;
+}
+button:hover {
+    color: var(--lighest);
+    border-color: var(--lighest);
+}
+
+header {
+    margin-bottom: 20px;
+}
+header .logo img {
+    max-height: 50px;
+    margin-right: 15px;
+}
+.user-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.user-menu a {
+    font-family: Poppins;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.5s;
+    color: var(--light);
+    margin: 10px 0 10px 20px;
+    display: inline-block;
+}
+.user-menu a:hover {
+    color: var(--lighest);
+    border-color: var(--lighest);
+}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block subtitle %} - Creating account{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <h2>Country</h2>
+    {{ form_widget(form.country) }}
+    <div class="text-right mt-3">
+        <button type="submit">Next</button>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
