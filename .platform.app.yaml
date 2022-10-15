@@ -41,6 +41,9 @@ hooks:
   deploy: |
     set -e
 
+        (>&2 symfony-deploy)
+        (>&2 symfony-database-migrate)
+
 web:
   locations:
     '/':
