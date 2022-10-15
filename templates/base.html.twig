@@ -18,6 +18,16 @@
         {% endblock %}
     </head>
     <body>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash flash-{{ label }}">
+                <span class="closebtn">&times;</span>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
     <div class="">
         <header class="">
             <div class="max-w-2xl mx-auto flex justify-between">

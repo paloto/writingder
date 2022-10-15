@@ -1,0 +1,15 @@
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+        profile:
+            uri_prefix: '%app.path.upload_dir%'
+            upload_destination: '%kernel.project_dir%/public%app.path.upload_dir%'
+            directory_namer: app.service.vich.directory_namer
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

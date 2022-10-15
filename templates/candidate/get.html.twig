@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CandidateController!{% endblock %}
+
+{% block body %}
+    <div>
+        {% if candidate is null %}
+            <div>There is not more candidates :(</div>
+        {% else %}
+            <div>
+                <img src="{{ vich_uploader_asset(candidate, 'imageFile') }}">
+            </div>
+            <h2 class="py-3">{{ candidate.name }}</h2>
+            <h3>{{ candidate.email }}</h3>
+            <div>{{ candidate.bio }}</div>
+            <div class="text-right">
+                <a class="button" href="{{ path('app_candidate_request', {'buddy' : candidate.id }) }}">LIKE IT!</a>
+                <a class="button" href="{{ path('app_candidate_discard', {'buddy' : candidate.id }) }}">DISCARD</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

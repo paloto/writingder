@@ -13,4 +13,31 @@ import './bootstrap';
 import $ from 'jquery';
 global.$ = global.jQuery = $;
 
-global.$ = global.jQuery = $;
+$(document).ready(function() {
+    setTimeout(closeFlashes, 3000);
+    $('.flash .closebtn').click(
+        function() {
+            closeFlash($(this).parent());
+        }
+    );
+});
+
+function closeFlashes()
+{
+    $('.flash').each(function() {
+        closeFlash(this);
+    })
+}
+
+function closeFlash(element)
+{
+    $(element).animate(
+        {
+            opacity: 0
+        },
+        1000,
+        function() {
+            $(element).css('display', 'none');
+        }
+    )
+}

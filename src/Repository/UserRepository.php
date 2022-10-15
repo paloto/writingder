@@ -56,6 +56,28 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->save($user, true);
     }
 
+    public function findRandomUser(): ?User
+    {
+        return $this->createQueryBuilder('u')
+            ->setMaxResults(1)
+            ->orderBy('rand()')
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function findRandomUserNotIds($notIds): ?User
+    {
+        return $this->createQueryBuilder('u')
+            ->where('u.id NOT IN (:notIds)')
+            ->setParameter('notIds', $notIds)
+            ->setMaxResults(1)
+            ->orderBy('rand()')
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */

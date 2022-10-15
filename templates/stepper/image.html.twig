@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block subtitle %} - Creating account{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <h2>Profile image</h2>
+    <p>Feel free to upload a picture of yourself or an avatar for use in Writingder.</p>
+    {{ form_widget(form.imageFile) }}
+    <div class="text-right mt-3">
+        <button type="submit">Next</button>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

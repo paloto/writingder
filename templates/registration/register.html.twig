@@ -10,6 +10,7 @@
     <h2>Sign up</h2>
 
     {{ form_start(registrationForm) }}
+        {{ form_errors(registrationForm) }}
         <label>E-mail</label>
         {{ form_widget(registrationForm.email) }}
         <label>Passord</label>
