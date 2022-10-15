@@ -1,0 +1,8 @@
+# Each route describes how an incoming URL is going to be processed by Platform.sh.
+"https://www.writingder.com/":
+  type: upstream
+  upstream: "app:http"
+
+"https://writingder.com/":
+  type: redirect
+  to: "https://www.writingder.com/"
